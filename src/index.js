@@ -176,6 +176,9 @@ const AddTodo = (props, { store }) => {
         </div>
     );
 };
+AddTodo.contextTypes = {
+    store: PropTypes.object
+};
 
 const getVisibleTodos = (todos, filter) => {
     switch (filter) {
