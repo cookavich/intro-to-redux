@@ -70,7 +70,7 @@ const Link = ({active, children, onClick}) => {
 
 class FilterLink extends Component {
     componentDidMount() {
-        const { store } = store;
+        const { store } = this.props;
         this.unsubscribe = store.subscribe(() =>
             this.forceUpdate()
         )
@@ -222,7 +222,7 @@ class VisibleTodoList extends Component {
 }
 
 let nextTodoId = 0;
-const TodoApp = ({store}) => (
+const TodoApp = ({ store }) => (
     <div>
         <AddTodo store={store} />
         <VisibleTodoList store={store} />
